@@ -1,0 +1,14 @@
+Satisfy All
+
+Order Deny,Allow
+Deny from all
+allow from 134.225.
+#allow from 134.225.250
+#allow from 134.225.251
+#allow from 134.225.32.27
+#allow from 134.225.67
+#allow from 134.225.158.240
+#allow from 91.106.10.108
+#Allow from 134.225.1.64
+
+#php_value auto_prepend_file "/opt/RDGphp5/local/acu_phpaspect.php"
