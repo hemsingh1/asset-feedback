@@ -1,0 +1,67 @@
+<head>
+<title>ASSET Test Form</title>
+</head>
+<body>
+<form method="post" action="https://asset-live.reading.ac.uk/dropbox/referral.php"
+  enctype="multipart/form-data">
+ 
+  <!-- The "Action" field is needed by the dropoff-processing code;
+       do not modify this field's definition in any way and expect
+       the dropoff to actually happen.
+    -->
+  <input type="hidden" name="Action" value="dropoff"/>
+ 
+  <!-- Provide the prefix used in naming any fields you add to this form that should
+       be added to the dropoff as an additional file in the payload.
+    -->
+  <!--
+  <input type="hidden" name="affPrefix" value="che_"/>
+  -->
+ 
+  <!-- What kind of file should be generated to contain the additional form field
+       data:  "text", "xml", and "html" are allowed ("text" is the default).
+    -->
+  <!--
+  <input type="hidden" name="affFormat" value="xml"/>
+  -->
+ 
+  <!-- Direct to a specific URL based on success or failure of the dropoff: -->
+  <input type="hidden" name="affSuccessURL"
+    value="https://asset-live.reading.ac.uk/dropbox/template-success.html"/>
+  <input type="hidden" name="affFailureURL"
+    value="https://asset-live.reading.ac.uk/dropbox/template-failure.html"/>
+ 
+  <!-- Recipients of the dropoff are the senders - handled by referral.php -->
+ 
+ 
+  <!-- Who may we ask is sending this form data?  At the very least the senderEmail
+       must be presented and filled-in by the end user.
+    -->
+  Sender name:<input type="text" name="senderName"/><br/>
+  <!--Sender organization:<input type="text" name="senderOrganization"/><br/>-->
+  Sender (UoR) email:<input type="text" name="senderEmail"/>
+  <hr/>
+ 
+ 
+  <!-- The file(s) being dropped-off with accompanying textual
+       description(s).
+ 
+       Additional files are added by duplicating the two
+       fields shown below and incrementing the trailing integer
+       (a'la "file_2").
+    -->
+  Video: <!--<input type="text" name="desc_1"/>-->
+  <input type="file" name="file_1"/>
+  <hr/>
+ 
+  <!--Confirm delivery of this file:<input type="checkbox" name="confirmDelivery" checked/>-->
+  <hr/>
+ 
+  <!-- Any additional form fields we want to accompany this dropoff: -->
+<!--  Project description:<textarea name="che_projectDescription"></textarea><br/>
+  Project code:<input type="text" name="che_projectCode" size="8" maxlen="8"/>
+  <hr/>
+--> 
+  <button type="submit">Submit!</button>
+</form>
+</body>
