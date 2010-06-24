@@ -1079,6 +1079,7 @@ The drop-off you made (claim ID: %s) has been picked-up.  %s made the pick-up fr
       $query = sprintf("SELECT * FROM pickup WHERE dID = %d ORDER by pickupTimestamp",$this->_dropoffID);
       if ( ($pickups = $this->_dropbox->database()->arrayQuery($query,SQLITE_ASSOC)) && (($pickupCount = count($pickups)) > 0) ) {
 ?>
+	<h5>Please be aware that embedded video (using the embed code) will not show up in this statistic!</h5>
     <table width="100%" class="UD_form" cellpadding="4">
       <tr class="UD_form_header"><td>Picked-up on date...</td><td>...from remote address...</td><td>...by recipient.</td></tr>
 <?PHP
