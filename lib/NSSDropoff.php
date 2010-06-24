@@ -1106,7 +1106,7 @@ The drop-off you made (claim ID: %s) has been picked-up.  %s made the pick-up fr
 
 <?PHP
       } else {
-        echo "None of the files have been picked-up yet.";
+        echo "None of the files have been picked-up yet, or they have only been viewed using the embed code.";
       }
 ?>
   </td>
