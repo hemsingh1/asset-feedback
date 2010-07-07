@@ -182,7 +182,7 @@
 		return	 $retval;
 	}
 	
-	function flv($movie, $width=400, $height=325, $accentcolor='', $btncolor='',$txtcolor='', $autoplay=off, $autoload=on, $volume=20, $mute="off"){
+	function flv($movie, $width=400, $height=325, $accentcolor='', $btncolor='',$txtcolor='', $autoplay=false, $autoload=false, $volume=20, $mute="off"){
 		echo flvstring($movie, $width, $height, $accentcolor, $btncolor, $txtcolor, $autoplay, $autoload, $volume, $mute);
 	}
 
