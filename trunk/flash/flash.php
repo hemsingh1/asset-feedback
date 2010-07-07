@@ -54,7 +54,7 @@
 		$once = false;
 	}
 
-	function flvstring($movie, $width=-1, $height=-1, $fgcolor='', $bgcolor='', $autoplay=false, $autoload=true, $autorewind=true, $volume=70, $loop=false, $mute=false, $muteonly=false, $clickurl='', $clicktarget=''){
+	function flvstring($movie, $width=-1, $height=-1, $fgcolor='', $bgcolor='', $autoplay=false, $autoload=false, $autorewind=true, $volume=70, $loop=false, $mute=false, $muteonly=false, $clickurl='', $clicktarget=''){
 		/*if(!file_exists($movie))
 			return "Movie not found.";*/
 		if($width == -1 || $height == -1)
@@ -83,10 +83,14 @@
 			$options[] = "btncolor=$btncolor";
 
 		if($autoplay && $autoplay !== '' && $autoplay !== 'default')
+			$options[] = 'autoplay=on';
+		else
 			$options[] = 'autoplay=off';
 			
 		if($autoload)
 			$options[] = 'autoload=on';
+		else
+			$options[] = 'autoload=off';
 			
 		if($volume && $volume !== '' && $volume !== 'default')
 			$options[] = "volume=$volume";
@@ -109,15 +113,15 @@
 		$retval .= "<noscript>\n";
 		$retval .= "<object width=\"$width\" height=\"$height\" id=\"flvPlayer\">\n";
 		$retval .= " <param name=\"allowFullScreen\" value=\"true\" />\n";
-		$retval .= " <param name=\"movie\" value=\"http://asset-live.reading.ac.uk/dropbox/player.swf?movie=$movie&$options\" />\n";
-		$retval .= " <embed src=\"http://asset-live.reading.ac.uk/dropbox/player.swf?movie=$movie&$options\" width=\"$width\" height=\"$height\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\n";
+		$retval .= " <param name=\"movie\" value=\"http://asset-live.reading.ac.uk/dropbox/OSplayer.swf?movie=$movie&$options\" />\n";
+		$retval .= " <embed src=\"http://asset-live.reading.ac.uk/dropbox/OSplayer.swf?movie=$movie&$options\" width=\"$width\" height=\"$height\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\n";
 		$retval .= "</object>\n";
 		$retval .= "</noscript>\n";
 			
 		return	 $retval;
 	}
 	
-	function flvembedstring($movie, $width=-1, $height=-1, $fgcolor='', $bgcolor='', $autoplay=false, $autoload=true, $autorewind=true, $volume=70, $loop=false, $mute=false, $muteonly=false, $clickurl='', $clicktarget=''){
+	function flvembedstring($movie, $width=-1, $height=-1, $fgcolor='', $bgcolor='', $autoplay=false, $autoload=false, $autorewind=true, $volume=70, $loop=false, $mute=false, $muteonly=false, $clickurl='', $clicktarget=''){
 		/*if(!file_exists($movie))
 			return "Movie not found.";*/
 		if($width == -1 || $height == -1)
@@ -146,10 +150,14 @@
 			$options[] = "btncolor=$btncolor";
 
 		if($autoplay && $autoplay !== '' && $autoplay !== 'default')
+			$options[] = 'autoplay=on';
+		else
 			$options[] = 'autoplay=off';
 			
 		if($autoload)
 			$options[] = 'autoload=on';
+		else
+			$options[] = 'autoload=off';
 			
 		if($volume && $volume !== '' && $volume !== 'default')
 			$options[] = "volume=$volume";
@@ -167,8 +175,8 @@
 		
 		$retval .= "<object width=\"$width\" height=\"$height\" id=\"flvPlayer\">\n";
 		$retval .= " <param name=\"allowFullScreen\" value=\"true\" />\n";
-		$retval .= " <param name=\"movie\" value=\"http://asset-live.reading.ac.uk/dropbox/player.swf?movie=$movie&$options\" />\n";
-		$retval .= " <embed src=\"http://asset-live.reading.ac.uk/dropbox/player.swf?movie=$movie&$options\" width=\"$width\" height=\"$height\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\n";
+		$retval .= " <param name=\"movie\" value=\"http://asset-live.reading.ac.uk/dropbox/OSplayer.swf?movie=$movie&$options\" />\n";
+		$retval .= " <embed src=\"http://asset-live.reading.ac.uk/dropbox/OSplayer.swf?movie=$movie&$options\" width=\"$width\" height=\"$height\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\n";
 		$retval .= "</object>\n";
 			
 		return	 $retval;
